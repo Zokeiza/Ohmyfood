@@ -39,7 +39,7 @@ header img
     margin-left: -5px;
     align-items: center;
     margin-bottom: 0;
-    i 
+    i
     {
     width: 20px;
     margin-right:10px;
@@ -87,6 +87,11 @@ header img
         background: linear-gradient($secondary-color,$primary-color);
         color: white;
     }
+    button:hover
+    {
+        cursor: pointer;
+        transform: scale(1.01);
+    }
 }
 
 /* FONCTIONNEMENT */
@@ -119,17 +124,29 @@ header img
     align-items: center;
     font-size: 18px;
     gap: 25px;
+    .number 
+    {
+        color: white;
+        border-radius: 50%;
+        background-color: #9356dc;
+        position: relative;
+        right: 20px;
+        padding: 3px 10px;
+    }
     i 
     {
         justify-content: center;
         color: grey;
-        margin-left: 20px;
+        margin-left: -5px;
         width: 18px;
+        font-size: 20px;
     }
 }
 .stage:hover
     {
         background-color: rgb(245,237,255);
+        transform: scale(1.01);
+        cursor: pointer;
     }
 
 /* RESTAURANTS */
@@ -175,26 +192,48 @@ header img
         margin: 0;
         padding: 0 0 10px 10px;
     }
-    i
+    .favorite
     {
         margin-left: auto;
         padding: 20px;
         font-size: 30px;
     }
+    .fas
+        {
+            display: none;
+        }
+        .favorite:hover
+        {
+            .fas
+            {
+                display: flex;
+                background-image: -webkit-linear-gradient(45deg, $secondary-color, $primary-color 80%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+            .far
+            {
+                display: none;
+                margin-left: auto;
+                margin-right: 2rem;
+                font-size: 25px;
+                margin-top: 25px;
+            }
+                
+        }
     .New
     {   
+        display: flex;
         background-color: #99e2d0;
         color: #1b6150;
         padding: 0.5rem;
         border-radius: 0.125rem;
         position: absolute;
-        top: 1rem;
-        right: 0.75rem;
+        margin-top: 1rem;
     }
 }
 .card:hover
 {  
-    transform: scale(1.01);
     transform: scale(1.01);
     cursor: pointer;
 }
@@ -238,3 +277,254 @@ footer
 }
 
 /* MENUS */
+
+.Menus
+{
+    header
+    {
+        display: flex;
+        align-items: center;
+        justify-content: row;
+        margin-top: 1rem;
+        margin-bottom: 10px;
+        i 
+        {
+            margin-left: 1rem;
+            font-size: 30px;
+        }
+        h1 
+        {
+            font-family: Shrikhand;
+            font-weight: 800;
+            margin: auto;
+            font-size: 33px;
+        }
+    }
+    main 
+    {
+        .MenuWrapper
+        {
+            background-color: rgb(246, 246, 246);
+            border-radius: 4rem 4rem 0 0;
+            position: relative;
+            margin-top: -4rem;
+            padding-bottom: 4rem;
+        }
+        .MenuRestaurantImage
+        {
+            height: 350px;
+            width: 100%;
+            object-fit: cover;
+        }
+        .MenuHeader
+        {
+            display: flex;
+            align-items: center;
+            margin: auto;
+            width: 90%;
+            h2 
+            {
+                font-family: Shrikhand;
+                font-size: 27px;
+                margin-top: 50px;
+            }
+            .favorite 
+            {
+                margin-left: auto;
+                margin-right: 2rem;
+                font-size: 30px;
+                margin-top: 25px;
+            }
+            .fas
+            {
+                display: none;
+            }
+            .favorite:hover
+            {
+                .fas
+                {
+                    display: flex;
+                    background-image: -webkit-linear-gradient(45deg, $secondary-color, $primary-color 80%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    cursor: pointer;
+                }
+                .far
+                {
+                    display: none;
+                    margin-left: auto;
+                    margin-right: 2rem;
+                    font-size: 25px;
+                    margin-top: 25px;
+                }
+                
+            }
+
+        }
+        .allMenus
+        {
+            display: flex;
+            flex-direction: column;
+            width: 90%;
+            margin: auto;
+            h2 
+            {
+                font-size: 20px;
+                font-weight: 400;
+                margin-bottom: 0.5rem;
+            }
+            .bar
+            {
+            width: 4rem;
+            height: 0.3rem;
+            background-color: #99e2d0;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            }
+            .anim1
+            {
+                animation-name: appear;
+                animation-duration: 1000ms;
+                animation-fill-mode: backwards;
+              }
+              @keyframes appear {
+                from {
+                  opacity: 0;
+                }
+                to {
+                  opacity: 1;
+                }
+              }
+              .anim1
+              {
+                animation-delay: 50ms;
+              }
+            .anim2
+            {
+                animation-name: appear;
+                animation-duration: 1000ms;
+                animation-fill-mode: backwards;
+              }
+              @keyframes appear {
+                from {
+                  opacity: 0;
+                }
+                to {
+                  opacity: 1;
+                }
+              }
+              .anim2
+              {
+                animation-delay: 300ms;
+              }
+            .anim3
+            {
+                animation-name: appear;
+                animation-duration: 1000ms;
+                animation-fill-mode: backwards;
+              }
+              @keyframes appear {
+                from {
+                  opacity: 0;
+                }
+                to {
+                  opacity: 1;
+                }
+              }
+              .anim3
+              {
+                animation-delay: 500ms;
+              }
+            .MenuItem
+            {
+                background-color: white;
+                border-radius: 1rem;
+                padding: 0 0px 0 15px;
+                font-size: 20px;
+                height: 100px;
+                margin-bottom: 20px;
+                box-shadow: 0px 0px 16px #0000002e;
+                .menuSelection 
+                {
+                    display:flex;
+                    transform: scaleX(0);
+                }
+                .MenuInfo
+                {
+                    display: flex;
+                    flex-direction: row;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    .menuTitle
+                    {
+                        font-size: 17px;
+                    }
+                    .menuPrice
+                    {
+                        margin-left: auto;
+                        font-weight: 800;
+                        margin-top: 55px;
+                        margin-right: 30px;
+                        margin-left: auto;
+                    }
+                    .menuDetails
+                    {
+                        flex-shrink: 1;
+                        text-overflow: ellipsis;
+                        font-size: 17px;
+                    }
+                }
+                
+            }
+            .MenuItem:hover
+            {
+                display: flex;
+                cursor: pointer;
+            
+                .menuSelection 
+                {
+                    display:flex;
+                    background: #99e2d0;
+                    height: auto;
+                    width: 100px;
+                    border-radius: 0 1rem 1rem 0;
+                    align-items: center;
+                    margin-left: auto;
+                    justify-content: center;
+                    color: white;
+                    font-size: 30px;
+                    transform-origin: 100% 0%;
+                    transform: scaleX(1);
+                    transition: transform 1000ms; 
+                    i 
+                    {
+                        transform: rotate(-1turn);
+                        transition: transform 500ms ease-in-out;
+                    }
+                }
+            }
+        }
+    button
+    {
+        display: flex;
+        width: 250px;
+        border-radius: 35px ;
+        border: 0;
+        height: 70px;
+        box-shadow: 0px 0px 16px #0000002e;
+        padding: 12px;
+        font-size: 22px;
+        background: linear-gradient($secondary-color,$primary-color);
+        color: white;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        margin-top: 3rem;
+    }
+    button:hover
+    {
+        transform: scale(1.01);
+        cursor: pointer;
+    }
+    }
+}
