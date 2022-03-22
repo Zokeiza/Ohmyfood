@@ -162,10 +162,11 @@ header img {
 .stage .number {
   color: white;
   border-radius: 50%;
-  background-color: #9356dc;
+  background-color: #9356DC;
   position: relative;
   right: 20px;
-  padding: 3px 10px;
+  padding: 3px 8px;
+  font-size: 15px;
 }
 
 .stage i {
@@ -180,9 +181,13 @@ header img {
 
 .stage:hover {
   background-color: #f5edff;
-  -webkit-transform: scale(1.01);
-          transform: scale(1.01);
   cursor: pointer;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.stage:hover i {
+  color: #9356DC;
 }
 
 /* RESTAURANTS */
@@ -211,6 +216,7 @@ header img {
   width: 90%;
   margin: auto;
   height: 270px;
+  position: relative;
   -webkit-box-shadow: 0px 0px 16px #0000002e;
           box-shadow: 0px 0px 16px #0000002e;
   border-radius: 1rem;
@@ -239,49 +245,54 @@ header img {
   margin-left: auto;
   padding: 20px;
   font-size: 30px;
+  position: relative;
 }
 
-.card .fas {
-  display: none;
+.card .favorite .fas {
+  opacity: 0;
+  background-image: white;
+  -webkit-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
+  background-image: -webkit-linear-gradient(45deg, #FF79DA, #9356DC 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: absolute;
+  right: 1rem;
+}
+
+.card .favorite .far {
+  position: absolute;
+  right: 1rem;
+  -webkit-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
 }
 
 .card .favorite:hover .fas {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  opacity: 1;
   background-image: -webkit-linear-gradient(45deg, #FF79DA, #9356DC 80%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .card .favorite:hover .far {
-  display: none;
+  opacity: 0;
   margin-left: auto;
-  margin-right: 2rem;
-  font-size: 25px;
-  margin-top: 25px;
 }
 
 .card .New {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   background-color: #99e2d0;
   color: #1b6150;
   padding: 0.5rem;
   border-radius: 0.125rem;
   position: absolute;
   margin-top: 1rem;
+  right: 1rem;
 }
 
 .card:hover {
   -webkit-transform: scale(1.01);
           transform: scale(1.01);
   cursor: pointer;
-}
-
-.card i:hover {
-  background-color: linear-gradient(#FF79DA, #9356DC);
 }
 
 .card-content {
@@ -386,17 +397,29 @@ footer i {
   margin-left: auto;
   margin-right: 2rem;
   font-size: 30px;
-  margin-top: 25px;
 }
 
 .Menus main .MenuHeader .fas {
-  display: none;
+  opacity: 0;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  position: absolute;
+  right: 3rem;
+  background-image: -webkit-linear-gradient(45deg, #FF79DA, #9356DC 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.Menus main .MenuHeader .far {
+  opacity: 1;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  position: absolute;
+  right: 3rem;
 }
 
 .Menus main .MenuHeader .favorite:hover .fas {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  opacity: 1;
   background-image: -webkit-linear-gradient(45deg, #FF79DA, #9356DC 80%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -404,11 +427,8 @@ footer i {
 }
 
 .Menus main .MenuHeader .favorite:hover .far {
-  display: none;
+  opacity: 0;
   margin-left: auto;
-  margin-right: 2rem;
-  font-size: 25px;
-  margin-top: 25px;
 }
 
 .Menus main .allMenus {
@@ -515,35 +535,59 @@ footer i {
           animation-delay: 500ms;
 }
 
+.Menus main .allMenus .anim4 {
+  -webkit-animation-name: appear;
+          animation-name: appear;
+  -webkit-animation-duration: 1000ms;
+          animation-duration: 1000ms;
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.Menus main .allMenus .anim4 {
+  -webkit-animation-delay: 700ms;
+          animation-delay: 700ms;
+}
+
 .Menus main .allMenus .MenuItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   background-color: white;
   border-radius: 1rem;
   padding: 0 0px 0 15px;
   font-size: 20px;
-  height: 100px;
+  height: 80px;
   margin-bottom: 20px;
   -webkit-box-shadow: 0px 0px 16px #0000002e;
           box-shadow: 0px 0px 16px #0000002e;
-}
-
-.Menus main .allMenus .MenuItem .menuSelection {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-transform: scaleX(0);
-          transform: scaleX(0);
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  overflow: hidden;
 }
 
 .Menus main .allMenus .MenuItem .MenuInfo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   overflow: hidden;
-  white-space: nowrap;
 }
 
 .Menus main .allMenus .MenuItem .MenuInfo .menuTitle {
@@ -551,18 +595,85 @@ footer i {
 }
 
 .Menus main .allMenus .MenuItem .MenuInfo .menuPrice {
-  margin-left: auto;
-  font-weight: 800;
-  margin-top: 55px;
-  margin-right: 30px;
-  margin-left: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: 700;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  margin: 0;
+  margin-bottom: 12px;
 }
 
-.Menus main .allMenus .MenuItem .MenuInfo .menuDetails {
+.Menus main .allMenus .MenuItem .MenuInfo .menuText {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 10px 0 10px 0px;
+}
+
+.Menus main .allMenus .MenuItem .MenuInfo .menuText h3 {
   -ms-flex-negative: 1;
       flex-shrink: 1;
+  display: block;
+  overflow: hidden;
   text-overflow: ellipsis;
-  font-size: 17px;
+  font-size: 20px;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.Menus main .allMenus .MenuItem .MenuInfo .menuText p {
+  margin: 0;
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 19px;
+}
+
+.Menus main .allMenus .MenuItem .end {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.Menus main .allMenus .MenuItem .menuSelection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: #99e2d0;
+  height: auto;
+  width: 0px;
+  border-radius: 0 1rem 1rem 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: white;
+  font-size: 30px;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-transform-origin: 100% 0%;
+          transform-origin: 100% 0%;
+  overflow: hidden;
+  opacity: 0;
 }
 
 .Menus main .allMenus .MenuItem:hover {
@@ -573,33 +684,19 @@ footer i {
 }
 
 .Menus main .allMenus .MenuItem:hover .menuSelection {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  background: #99e2d0;
-  height: auto;
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
+  opacity: 1;
   width: 100px;
-  border-radius: 0 1rem 1rem 0;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-left: auto;
+}
+
+.Menus main .allMenus .MenuItem:hover .menuSelection .icon-check {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  color: white;
-  font-size: 30px;
-  -webkit-transform-origin: 100% 0%;
-          transform-origin: 100% 0%;
-  -webkit-transform: scaleX(1);
-          transform: scaleX(1);
-  -webkit-transition: -webkit-transform 1000ms;
-  transition: -webkit-transform 1000ms;
-  transition: transform 1000ms;
-  transition: transform 1000ms, -webkit-transform 1000ms;
-}
-
-.Menus main .allMenus .MenuItem:hover .menuSelection i {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-transform: rotate(-1turn);
           transform: rotate(-1turn);
   -webkit-transition: -webkit-transform 500ms ease-in-out;
@@ -637,5 +734,7 @@ footer i {
   -webkit-transform: scale(1.01);
           transform: scale(1.01);
   cursor: pointer;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
 /*# sourceMappingURL=style.css.map */
