@@ -16,6 +16,93 @@ a
     color: inherit;
     text-decoration: inherit;
 }
+.Loader
+{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: hsla(0,0%,100%,.9);
+    animation-name: Loader;
+    animation-delay: 2s;
+    animation-duration: 1000ms;
+    animation-fill-mode: both;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @keyframes Loader {
+        100% {
+            opacity: 0;
+            z-index: -10;
+        }
+    }
+    .Loader__Container
+    {
+        display: flex;
+        width: 5rem;
+        justify-content: space-between;
+        .Loader__item {
+            height: 1rem;
+            width: 1rem;
+            border-radius: 1rem;
+            animation-name: jump;
+            animation-duration: 1000ms;
+            animation-fill-mode: backwards;
+            animation-iteration-count: 3;
+            transition: all ease-in;
+        }
+        @keyframes jump {
+            0% {
+                transform: translateY(0);
+            }
+            10%{
+                transform: translateY(0.5rem);
+            }
+            20%{
+                transform: translateY(1rem);
+            }
+            30%{
+                transform: translateY(0.5rem);
+            }
+            40%{
+                transform: translateY(0rem);
+            }
+            50%{
+                transform: translateY(-0.5rem);
+            }
+            60%{
+                transform: translateY(-1rem);
+            }
+            70%{
+                transform: translateY(-0.5rem);
+            }
+            80%{
+                transform: translateY(0rem);
+            }
+            90%{
+                transform: translateY(0rem);
+            }
+            100%{
+                transform: translateY(0rem);
+            }
+            
+        }
+        .Loader__item--1 {
+            background: linear-gradient($secondary-color,$primary-color);
+        }
+        .Loader__item--2 {
+            background: linear-gradient($secondary-color,$primary-color);
+            animation-delay: 0.1s;
+        }
+        .Loader__item--3 {
+            background: linear-gradient($secondary-color,$primary-color);
+            animation-delay: 0.2s;
+        }
+    }
+}
 
 /* HEADER */
 
